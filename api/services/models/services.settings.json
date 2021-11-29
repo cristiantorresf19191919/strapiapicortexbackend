@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "name": "posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "pictures": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "partners": {
+      "collection": "partners",
+      "via": "services",
+      "dominant": true
+    },
+    "price": {
+      "type": "float"
+    }
+  }
+}

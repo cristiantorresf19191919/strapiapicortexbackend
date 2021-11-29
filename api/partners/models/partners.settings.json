@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "name": "partners",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "password": {
+      "type": "password"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "I",
+        "X"
+      ]
+    },
+    "services": {
+      "via": "partners",
+      "collection": "services"
+    }
+  }
+}
